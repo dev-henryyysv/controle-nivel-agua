@@ -1,49 +1,51 @@
-# Nome: Henry Rodrigues
-# Turma: (FAU - TO260015529D1)
-# Atividade: Controle de Níveis de Água
-# Descrição: Sistema que simula o monitoramento de um reservatório
-# utilizando níveis com cores diferentes no terminal.
-# Sistema de Monitoramento de Nível de Água
-# Compatível com Pydroid 3
+# 💧 Sistema de Monitoramento de Nível de Água
 
-from colorama import Fore, Style, init
-import time
+## 📌 Informações do Aluno
+- **Nome:** Henry Rodrigues  
+- **Turma:** FAU - TO260015529D1  
+- **Disciplina:** Desenvolvimento de Sistemas  
 
-# Inicializa colorama
-init(autoreset=True)
+---
 
-# Lista de níveis (mensagem + cor)
-niveis = [
-    ("Muito baixo (CRÍTICO)", Fore.RED),
-    ("Baixo", Fore.YELLOW),
-    ("Médio", Fore.GREEN),
-    ("Alto", Fore.CYAN),
-    ("Muito alto (ALERTA)", Fore.BLUE)
-]
+## 📖 Descrição do Projeto
+Este projeto simula o monitoramento de um reservatório de água, exibindo diferentes níveis de alerta no terminal.
 
-# Função para exibir nível
-def mostrar_nivel(nivel):
-    if 1 <= nivel <= 5:
-        mensagem, cor = niveis[nivel - 1]
-        
-        # Barra visual (pra ficar mais profissional)
-        barra = "█" * nivel + "-" * (5 - nivel)
-        
-        print(cor + f"\nNível {nivel}: {mensagem}")
-        print(cor + f"[{barra}]")
-        print(Style.RESET_ALL)
-    else:
-        print("Nível inválido!")
+Cada nível é representado por:
+- Uma **mensagem descritiva**
+- Uma **cor específica**
+- Uma **barra visual**, facilitando a leitura do estado atual
 
-# Simulação do sistema
-def simular():
-    print("=== MONITORAMENTO DO RESERVATÓRIO ===\n")
-    
-    for nivel in range(1, 6):
-        mostrar_nivel(nivel)
-        time.sleep(1)  # pausa pra simular tempo real
+---
 
-    print("\nMonitoramento finalizado.")
+## 🎯 Objetivo
+Desenvolver um sistema simples utilizando:
+- Listas
+- Funções
+- Biblioteca externa (`colorama`)
 
-# Executa o programa
-simular()
+---
+
+## 🧠 Níveis do Sistema
+
+| Nível | Situação                | Cor      |
+|------|------------------------|----------|
+| 1    | Muito baixo (CRÍTICO)  | Vermelho |
+| 2    | Baixo                  | Amarelo  |
+| 3    | Médio                  | Verde    |
+| 4    | Alto                   | Ciano    |
+| 5    | Muito alto (ALERTA)    | Azul     |
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+- Python 3
+- Biblioteca `colorama`
+- Pydroid 3
+
+---
+
+## ▶️ Como Executar
+
+1. Instale a biblioteca necessária:
+```bash
+pip install colorama
